@@ -1,0 +1,20 @@
+.Header {
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 5px 0;
+}
+
+.HeaderLeft {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.HeaderLogo {
+  width: 52px;
+  height: 52px;
+}
+
+.HeaderTitle {
+  font-size: 2rem;
+}
