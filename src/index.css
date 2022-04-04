@@ -8,3 +8,7 @@
 body {
   padding: 0 15px;
 }
+
+nav .active {
+  text-decoration: underline;
+}
