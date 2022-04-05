@@ -3,9 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import missionsReducer from './Missions/missions';
-
-const rocketsReducer = '';
-
+import { rocketsReducer } from './Rockets/Rockets';
 /* eslint-disable no-underscore-dangle */
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
