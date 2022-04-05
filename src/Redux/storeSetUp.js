@@ -2,9 +2,9 @@ import {
   combineReducers, createStore, applyMiddleware, compose,
 } from 'redux';
 import thunk from 'redux-thunk';
+import missionsReducer from './Missions/missions';
 
 const rocketsReducer = '';
-const missionsReducer = '';
 
 /* eslint-disable no-underscore-dangle */
 
