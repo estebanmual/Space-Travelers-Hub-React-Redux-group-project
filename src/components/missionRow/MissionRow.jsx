@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button, Badge } from 'react-bootstrap';
 import style from './MissionRow.module.css';
 
 function MissionRow({ mission }) {
@@ -10,9 +11,11 @@ function MissionRow({ mission }) {
       <td className={style.Name}>{name}</td>
       <td className={style.Description}>{description}</td>
       <td className={style.Status}>
-        <div className={style.Status__NotMember}>NOT A MEMBER</div>
+        <Badge bg="secondary"> NOT A MEMBER</Badge>
       </td>
-      <td className={style.Button}><button type="button" className={style.Button__JoinMission}>Join Mission</button></td>
+      <td className={style.Button}>
+        <Button variant="outline-dark">Join Mission</Button>
+      </td>
     </tr>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Table } from 'react-bootstrap';
 import { fetchMissions } from '../../Redux/Missions/missions';
 import MissionRow from '../missionRow/MissionRow';
 import style from './Missions.module.css';
@@ -13,7 +14,7 @@ function Missions() {
   }, []);
 
   return (
-    <table className={style.Table}>
+    <Table striped bordered>
       <thead className={style.Table__Head}>
         <tr>
           <th>Mission</th>
@@ -21,10 +22,10 @@ function Missions() {
           <th>Status</th>
         </tr>
       </thead>
-      <tbody className={style.Table__Body}>
+      <tbody>
         {missions.map(((mission) => (<MissionRow key={mission.id} mission={mission} />)))}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
