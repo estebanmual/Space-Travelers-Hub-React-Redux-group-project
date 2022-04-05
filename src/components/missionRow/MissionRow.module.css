@@ -1,0 +1,34 @@
+.Row td {
+  font-size: 1rem;
+}
+
+.Row td:nth-child(1) {
+  font-weight: bolder;
+  font-size: 1.4rem;
+  vertical-align: top;
+}
+
+.Status {
+  white-space: nowrap;
+}
+
+.Status__NotMember {
+  background-color: #6d757d;
+  color: white;
+  font-weight: bolder;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.Button {
+  white-space: nowrap;
+}
+
+.Button__JoinMission {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
