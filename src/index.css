@@ -2,6 +2,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
   font-size: 62.5%;
 }
 
@@ -11,4 +14,10 @@ body {
 
 nav .active {
   text-decoration: underline;
+}
+
+.badge {
+  padding: 4px;
+  display: flex;
+  align-items: center;
 }

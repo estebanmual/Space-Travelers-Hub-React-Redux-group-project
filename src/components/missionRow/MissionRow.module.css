@@ -1,0 +1,18 @@
+.Row td {
+  font-size: 1rem;
+}
+
+.Row td:nth-child(1) {
+  font-weight: bolder;
+  font-size: 1.4rem;
+  vertical-align: top;
+}
+
+.Status {
+  vertical-align: middle;
+}
+
+.Button {
+  vertical-align: middle;
+  white-space: nowrap;
+}
