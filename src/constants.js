@@ -1,4 +1,5 @@
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
 export const FETCH_ROCKETS = 'FETCH_ROCKETS';
+export const RESERVE_ROCKET = 'RESERVE_ROCKET';
 
 export default FETCH_MISSIONS;
