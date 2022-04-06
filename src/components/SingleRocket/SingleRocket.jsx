@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Badge } from 'react-bootstrap';
 import style from './SingleRocket.module.css';
+import { RESERVE_ROCKET } from '../../constants';
 
 function SingleRocket({ rocket }) {
   const {
-    name, type, flickrImages,
+    name, flickrImages, id, description, reserved,
   } = rocket;
+
+  const dispatch = useDispatch();
+
+  const [rocketState, setRocketState] = useState(reserved);
+
+  const reserveRocket = (id) => {
+    setRocketState(!rocketState);
+    dispatch({ type: RESERVE_ROCKET, id });
+  };
+
   return (
     <div className={style.container}>
       <div className={style.imgContainer}>
@@ -14,15 +27,11 @@ function SingleRocket({ rocket }) {
       <div className={style.infoContainer}>
         <h1>{name}</h1>
         <p>
-          {type}
+          {rocketState && <Badge bg="primary">Reserved</Badge>}
           {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quod alias distinctio animi est? Nihil laudantium aliquid labore deleniti
-          temporibus eligendi iusto minus error quo corrupti ratione asperiores,
-          rem rerum amet suscipit expedita vel, atque numquam,
-          ut architecto sint quidem accusantium.
+          {description}
         </p>
-        <button className={style.infoButton} type="button">Reserve Rocket</button>
+        {rocketState ? <button id={id} onClick={(e) => reserveRocket(e.target.id)} className={style.cancelButton} type="button">Cancel Reservation</button> : <button id={id} onClick={(e) => reserveRocket(e.target.id)} className={style.infoButton} type="button">Reserve Rocket</button> }
       </div>
     </div>
   );
@@ -39,6 +48,8 @@ SingleRocket.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     type: PropTypes.string,
+    description: PropTypes.string,
     flickrImages: PropTypes.string,
+    reserved: PropTypes.bool,
   }),
 };
