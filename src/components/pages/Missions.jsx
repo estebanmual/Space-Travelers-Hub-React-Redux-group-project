@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import { fetchMissions } from '../../Redux/Missions/missions';
 import MissionRow from '../missionRow/MissionRow';
 import style from './Missions.module.css';
+import Spineer from '../spinner/Spineer';
 
 function Missions() {
   const missions = useSelector((state) => (state.missions));
@@ -14,18 +15,22 @@ function Missions() {
   }, []);
 
   return (
-    <Table striped bordered>
-      <thead className={style.Table__Head}>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {missions.map(((mission) => (<MissionRow key={mission.id} mission={mission} />)))}
-      </tbody>
-    </Table>
+    <>
+      <Suspense fallback={<Spineer />}>
+        <Table striped bordered>
+          <thead className={style.Table__Head}>
+            <tr>
+              <th>Mission</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {missions.map(((mission) => (<MissionRow key={mission.id} mission={mission} />)))}
+          </tbody>
+        </Table>
+      </Suspense>
+    </>
   );
 }
 
