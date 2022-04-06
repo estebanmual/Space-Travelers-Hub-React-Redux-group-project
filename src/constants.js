@@ -1,4 +1,3 @@
 export const FETCH_MISSIONS = 'FETCH_MISSIONS';
 export const FETCH_ROCKETS = 'FETCH_ROCKETS';
 export const JOIN_MISSION = 'JOIN_MISSION';
-export const LEAVE_MISSION = 'LEAVE_MISSION';

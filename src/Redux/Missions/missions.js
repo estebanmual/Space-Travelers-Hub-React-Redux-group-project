@@ -1,4 +1,4 @@
-import { FETCH_MISSIONS, JOIN_MISSION, LEAVE_MISSION } from '../../constants';
+import { FETCH_MISSIONS, JOIN_MISSION } from '../../constants';
 
 // Action Creators
 
@@ -9,8 +9,6 @@ export const fetchMissions = () => async (dispatch) => {
 };
 
 export const joinMission = (id) => ({ type: JOIN_MISSION, id });
-
-export const leaveMission = (id) => ({ type: LEAVE_MISSION, id });
 
 // Reducer
 
@@ -31,13 +29,8 @@ export default function missionsReducer(state = [], action) {
     case JOIN_MISSION:
       missions = state.map((mission) => {
         if (mission.id !== action.id) { return mission; }
-        return { ...mission, reserved: true };
-      });
-      return missions;
-    case LEAVE_MISSION:
-      missions = state.map((mission) => {
-        if (mission.id !== action.id) { return mission; }
-        return { ...mission, reserved: false };
+        const res = mission.reserved;
+        return { ...mission, reserved: !res };
       });
       return missions;
     default:

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Badge } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { joinMission, leaveMission } from '../../Redux/Missions/missions';
+import { joinMission } from '../../Redux/Missions/missions';
 import style from './MissionRow.module.css';
 
 function MissionRow({ mission }) {
@@ -22,7 +22,7 @@ function MissionRow({ mission }) {
         {reservedMission ? <Badge bg="primary">Active Member</Badge> : <Badge bg="secondary">NOT A MEMBER</Badge>}
       </td>
       <td className={style.Button}>
-        {reservedMission ? <Button id={id} variant="outline-danger" onClick={(e) => { setReservedMission(false); dispatch(leaveMission(e.target.id)); }}>Leave Mission</Button> : <Button id={id} variant="outline-dark" onClick={(e) => { setReservedMission(true); dispatch(joinMission(e.target.id)); }}>Join Mission</Button>}
+        {reservedMission ? <Button id={id} variant="outline-danger" onClick={(e) => { setReservedMission(false); dispatch(joinMission(e.target.id)); }}>Leave Mission</Button> : <Button id={id} variant="outline-dark" onClick={(e) => { setReservedMission(true); dispatch(joinMission(e.target.id)); }}>Join Mission</Button>}
       </td>
     </tr>
   );
