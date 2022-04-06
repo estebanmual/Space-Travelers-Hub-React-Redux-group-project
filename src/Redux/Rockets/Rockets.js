@@ -15,7 +15,7 @@ export const rocketsReducer = (state = [], action) => {
           id: rocket.rocket_id,
           name: rocket.rocket_name,
           type: rocket.rocket_type,
-          flickr_images: rocket.flickr_images[0],
+          flickrImages: rocket.flickr_images[0],
         });
       });
       return rockets;
