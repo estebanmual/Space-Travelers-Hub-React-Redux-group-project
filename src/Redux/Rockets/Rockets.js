@@ -1,4 +1,4 @@
-import { FETCH_ROCKETS } from '../../constants';
+import { FETCH_ROCKETS, RESERVE_ROCKET } from '../../constants';
 
 export const fetchRockets = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
@@ -8,6 +8,7 @@ export const fetchRockets = () => async (dispatch) => {
 
 export const rocketsReducer = (state = [], action) => {
   const rockets = [];
+  let newState = [];
   switch (action.type) {
     case FETCH_ROCKETS:
       action.payload.forEach((rocket) => {
@@ -16,9 +17,17 @@ export const rocketsReducer = (state = [], action) => {
           name: rocket.rocket_name,
           type: rocket.rocket_type,
           flickrImages: rocket.flickr_images[0],
+          description: rocket.description,
+          reserved: false,
         });
       });
       return rockets;
+    case RESERVE_ROCKET:
+      newState = state.map((rocket) => {
+        if (rocket.id !== action.id) return { ...rocket };
+        return { ...rocket, reserved: !rocket.reserved };
+      });
+      return newState;
     default:
       return state;
   }
