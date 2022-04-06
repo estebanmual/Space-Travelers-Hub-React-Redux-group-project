@@ -16,8 +16,4 @@ nav .active {
   text-decoration: underline;
 }
 
-.badge {
-  padding: 4px;
-  display: flex;
-  align-items: center;
-}
+
