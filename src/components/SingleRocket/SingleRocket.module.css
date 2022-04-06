@@ -2,6 +2,7 @@
   display: flex;
   padding: 20px 0;
   column-gap: 10px;
+  flex-wrap: wrap;
 }
 
 .imgContainer img {
@@ -10,7 +11,7 @@
 }
 
 .infoContainer {
-  width: 100%;
+  width: 80%;
 }
 
 .infoContainer p {
