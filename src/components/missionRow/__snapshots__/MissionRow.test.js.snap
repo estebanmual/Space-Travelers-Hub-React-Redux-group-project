@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Header snapshot for the header  1`] = `
+<tr
+  className="Row"
+>
+  <td
+    className="Name"
+  />
+  <td
+    className="Description"
+  />
+  <td
+    className="Status"
+  >
+    <span
+      className="badge bg-secondary"
+    >
+      NOT A MEMBER
+    </span>
+  </td>
+  <td
+    className="Button"
+  >
+    <button
+      className="btn btn-outline-dark"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Join Mission
+    </button>
+  </td>
+</tr>
+`;
