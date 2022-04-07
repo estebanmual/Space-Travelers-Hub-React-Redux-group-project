@@ -1,0 +1,12 @@
+.Table__Head {
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+
+.Table__Head th {
+  padding: 5px;
+}
+
+.Table td {
+  padding: 5px;
+}

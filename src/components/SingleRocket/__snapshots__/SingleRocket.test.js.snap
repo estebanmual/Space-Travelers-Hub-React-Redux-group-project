@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Header snapshot for the header  1`] = `
+<div
+  className="container"
+>
+  <div
+    className="imgContainer"
+  >
+    <img
+      alt=""
+      src=""
+    />
+  </div>
+  <div
+    className="infoContainer"
+  >
+    <h1 />
+    <p>
+       
+    </p>
+    <button
+      className="infoButton"
+      data-testid="reserve-btn"
+      id={null}
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</div>
+`;
