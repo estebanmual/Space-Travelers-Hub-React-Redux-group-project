@@ -1,23 +1,25 @@
 import renderer from 'react-test-renderer';
-import { render, screen, fireEvent } from '@testing-library/react';
+import {
+  render, screen, fireEvent,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../../Redux/storeSetUp';
-import MissionRow from './MissionRow';
+import SingleRocket from './SingleRocket';
 
 describe('testing Header', () => {
   it('snapshot for the header ', () => {
     const tree = renderer.create(
-      <Provider store={store}><table><tbody><MissionRow /></tbody></table></Provider>,
+      <Provider store={store}><SingleRocket /></Provider>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('testing Header component renders correctly', () => {
-    render(<Provider store={store}><MissionRow /></Provider>);
-    expect(screen.getByText('NOT A MEMBER')).toBeInTheDocument();
+    render(<Provider store={store}><SingleRocket /></Provider>);
+    expect(screen.getByText('Reserve Rocket')).toBeInTheDocument();
   });
-  it('click button', () => {
-    const button = render(<Provider store={store}><MissionRow /></Provider>).getByText('Join Mission');
+  it('Clicking the button to reserve', () => {
     const mockhandler = jest.fn();
+    const button = render(<Provider store={store}><SingleRocket /></Provider>).getByTestId('reserve-btn');
 
     if (fireEvent.click(button)) {
       mockhandler();
@@ -25,14 +27,16 @@ describe('testing Header', () => {
 
     expect(mockhandler).toHaveBeenCalledTimes(1);
   });
-  it('click Leave mission', () => {
-    const mission = {
+  it('click button to leave rocket', () => {
+    const rocket = {
       id: '',
       name: '',
+      type: '',
+      flickrImages: '',
       description: '',
       reserved: true,
     };
-    const button = render(<Provider store={store}><MissionRow mission={mission} /></Provider>).getByText('Leave Mission');
+    const button = render(<Provider store={store}><SingleRocket rocket={rocket} /></Provider>).getByText('Cancel Reservation');
     const mockhandler = jest.fn();
     if (fireEvent.click(button)) { mockhandler(); }
 

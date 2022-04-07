@@ -11,6 +11,6 @@ describe('testing Header', () => {
   });
   it('testing Header component renders correctly', () => {
     render(<Provider store={store}><Rockets /></Provider>);
-    expect(screen.getByText('')).toBeInTheDocument();
+    expect(screen.getByTestId('rockets')).toBeInTheDocument();
   });
 });
