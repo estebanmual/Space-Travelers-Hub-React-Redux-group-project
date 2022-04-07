@@ -31,7 +31,12 @@ function MissionRow({ mission }) {
 export default MissionRow;
 
 MissionRow.defaultProps = {
-  mission: '',
+  mission: {
+    id: null,
+    name: '',
+    description: '',
+    reserved: false,
+  },
 };
 
 MissionRow.propTypes = {

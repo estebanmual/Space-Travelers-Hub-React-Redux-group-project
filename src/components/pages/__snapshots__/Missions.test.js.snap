@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Header snapshot for the header  1`] = `
+<table
+  className="table table-striped table-bordered"
+>
+  <thead
+    className="Table__Head"
+  >
+    <tr>
+      <th>
+        Mission
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Status
+      </th>
+    </tr>
+  </thead>
+  <tbody />
+</table>
+`;

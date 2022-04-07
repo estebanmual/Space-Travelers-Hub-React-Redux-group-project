@@ -10,7 +10,11 @@ function Rockets() {
   useEffect(() => {
     dispatch(fetchRockets());
   }, []);
-  return rockets.map((rocket) => <SingleRocket key={rocket.id} rocket={rocket} />);
+  return (
+    <div data-testid="rockets">
+      {rockets.map((rocket) => <SingleRocket key={rocket.id} rocket={rocket} />)}
+    </div>
+  );
 }
 
 export default Rockets;
